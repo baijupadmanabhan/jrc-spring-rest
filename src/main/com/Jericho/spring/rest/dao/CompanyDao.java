@@ -44,7 +44,7 @@ public class CompanyDao {
 	
 	@Cacheable(value="myCache")
 	public CompanyList findListOfCompanies(){
-//		logger.debug("Inside findListOfCompanies start");
+		logger.debug("Inside findListOfCompanies start");
 		setCompanyList();
 		
 		return companyList;
@@ -66,7 +66,7 @@ public class CompanyDao {
 
 			@Override
 			public Company mapRow(ResultSet resultSet, int arg1) throws SQLException {
-//				logger.debug("Inside findListOfCompanies got resultset from db");
+				logger.debug("Inside findListOfCompanies got resultset from db");
 				Company company = new Company();
 				company.setBusinessSector(resultSet.getString("BUSINESS_SECTOR"));
 				company.setCompanyId(resultSet.getString("ECM_PRTY_ID"));
