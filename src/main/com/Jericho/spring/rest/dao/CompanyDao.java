@@ -66,7 +66,6 @@ public class CompanyDao {
 				company.setBusinessSector(resultSet.getString("BUSINESS_SECTOR"));
 				company.setCompanyId(resultSet.getString("ECM_PRTY_ID"));
 				company.setCompanyName(resultSet.getString("COMPANY_NAME"));
-				//company.setLastUpdate(""+resultSet.getTimestamp(env.getProperty("LastUpdate")));
 				company.setPermId(resultSet.getString("PERM_ID"));
 				company.setRevenueRank(""+resultSet.getInt("REVENUE_RANK"));
 				company.setRic(resultSet.getString("RIC"));
@@ -100,7 +99,8 @@ public class CompanyDao {
 				company.setCompanyId(resultSet1.getString("ECM_PRTY_ID"));
 				company.setCompanyName(resultSet1.getString("COMPANY_NAME"));
 				company.setPermId(resultSet1.getString("PERM_ID"));
-				company.setRevenueRank(""+resultSet1.getInt("REVENUE_RANK"));
+				String RevenueRank = (df.format(resultSet1.getInt("REVENUE_RANK")));
+				company.setRevenueRank(""+RevenueRank);
 				company.setRic(resultSet1.getString("RIC"));
 				company.setTicker(resultSet1.getString("TICKER"));
 				company.setWebsite(resultSet1.getString("WEBSITE"));
