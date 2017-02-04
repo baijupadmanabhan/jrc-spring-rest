@@ -9,12 +9,12 @@ import javax.sql.DataSource;
 import java.text.DecimalFormat;
 
 
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
-//import org.springframework.core.env.Environment;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -36,14 +36,9 @@ public class CompanyDao {
         this.dataSource = dataSource;
     }
 	
-//	private static final Logger logger = LoggerFactory
-//			.getLogger(CompanyDao.class);
+	private static final Logger logger = LoggerFactory
+			.getLogger(CompanyDao.class);
 	
-//	@Autowired
-//	private JdbcTemplate jdbcTemplate;
-	
-//	@Autowired
-//	Environment env;
 	
 	private CompanyList companyList;
 	
