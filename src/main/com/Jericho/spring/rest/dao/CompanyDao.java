@@ -9,9 +9,6 @@ import javax.sql.DataSource;
 import java.text.DecimalFormat;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 
@@ -36,15 +33,14 @@ public class CompanyDao {
         this.dataSource = dataSource;
     }
 	
-	private static final Logger logger = LoggerFactory
-			.getLogger(CompanyDao.class);
+
 	
 	
 	private CompanyList companyList;
 	
 	@Cacheable(value="myCache")
 	public CompanyList findListOfCompanies(){
-		logger.debug("Inside findListOfCompanies start");
+
 		setCompanyList();
 		
 		return companyList;
@@ -66,7 +62,6 @@ public class CompanyDao {
 
 			@Override
 			public Company mapRow(ResultSet resultSet, int arg1) throws SQLException {
-				logger.debug("Inside findListOfCompanies got resultset from db");
 				Company company = new Company();
 				company.setBusinessSector(resultSet.getString("BUSINESS_SECTOR"));
 				company.setCompanyId(resultSet.getString("ECM_PRTY_ID"));
