@@ -33,8 +33,6 @@ public class CompanyDao {
         this.dataSource = dataSource;
     }
 	
-
-	
 	
 	private CompanyList companyList;
 	
@@ -67,7 +65,8 @@ public class CompanyDao {
 				company.setCompanyId(resultSet.getString("ECM_PRTY_ID"));
 				company.setCompanyName(resultSet.getString("COMPANY_NAME"));
 				company.setPermId(resultSet.getString("PERM_ID"));
-				company.setRevenueRank(""+resultSet.getInt("REVENUE_RANK"));
+				String RevenueRank = String.valueOf(resultSet.getInt("REVENUE_RANK")) ;
+				company.setRevenueRank(""+RevenueRank);
 				company.setRic(resultSet.getString("RIC"));
 				company.setTicker(resultSet.getString("TICKER"));
 				company.setWebsite(resultSet.getString("WEBSITE"));
@@ -99,7 +98,7 @@ public class CompanyDao {
 				company.setCompanyId(resultSet1.getString("ECM_PRTY_ID"));
 				company.setCompanyName(resultSet1.getString("COMPANY_NAME"));
 				company.setPermId(resultSet1.getString("PERM_ID"));
-				String RevenueRank = (df.format(resultSet1.getInt("REVENUE_RANK")));
+				String RevenueRank = String.valueOf(resultSet1.getInt("REVENUE_RANK"));
 				company.setRevenueRank(""+RevenueRank);
 				company.setRic(resultSet1.getString("RIC"));
 				company.setTicker(resultSet1.getString("TICKER"));
